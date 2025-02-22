@@ -1,0 +1,30 @@
+package com.ts.math;
+
+public class HarshadNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		boolean isHarshad = isHarshadNum(10);
+		System.out.println("isHarshad= " + isHarshad);
+
+	}
+
+	private static boolean isHarshadNum(int n) {
+		// TODO Auto-generated method stub
+		int sum = 0;
+		int temp= n;
+		
+		while(n!=0) {
+		int r = n%10;
+		     n=n/10;
+		     
+		 sum += r ;
+		 if(temp % sum == 0) {
+			 return true;
+		 }
+		 
+		}
+		return false;
+	}
+
+}
