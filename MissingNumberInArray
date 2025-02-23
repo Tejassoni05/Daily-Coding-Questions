@@ -1,0 +1,30 @@
+package com.ts.math;
+
+public class MissingNumber {
+	public static void main(String[] args) {
+		int ar[] = new int[] { 1, 2, 5, 10, 8, 4, 7, 3, 6 };
+		int res = m1(ar);
+		System.out.println(res);
+	}
+
+	private static int m1(int[] ar) {
+		// TODO Auto-generated method stub
+		for(int num = 1 ; num <= 10; num++ ) {
+		boolean flag = false ; 
+		for(int i = 0; i <ar.length; i++ ) {
+			//System.out.println();
+			if (ar[i]== num ) {
+				flag = true ; 
+			     break; 
+			}
+		}
+		if (flag == false)
+		return num;
+		}
+		return 0;
+			
+		
+	}
+	
+
+}
