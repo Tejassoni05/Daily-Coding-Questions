@@ -1,0 +1,36 @@
+package com.ts.matrix;
+
+import java.util.Scanner;
+
+//  10 20 0              totalnumCol = r*c; 
+//  0   40  0              
+//  0   50  0      sparse matrix means no. Zero element > non Zero element 
+public class Sparse_Martrix {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int r = sc.nextInt();
+		int c = sc.nextInt();
+		int totalNumberOfColum = r * c;
+		int mat[][] = new int[r][c];
+		for (int i = 0; i < r; i++) {
+			for (int j = 0; j < c; j++) {
+				mat[i][j] = sc.nextInt();
+			}
+		}
+		int zero = 0;
+		for (int i = 0; i < r; i++) {
+			for (int j = 0; j < c; j++) {
+				if (mat[i][j] == 0) {
+					zero++;
+				}
+			}
+		}
+		int nonZero = totalNumberOfColum - zero;
+		if (zero > nonZero) {
+			System.out.println("YES");
+		} else {
+			System.out.println("NO");
+		}
+	}
+}
