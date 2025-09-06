@@ -1,0 +1,28 @@
+import java.util.*;
+class Main {
+    public static void printUniqueNum( List<Integer> numbers){
+        Set<Integer> uniqueSet = new HashSet<>(); // if we want sort also then in the place of HashSet use TreeSet 
+        
+        for(Integer number : numbers ){
+            uniqueSet.add(number);
+        }
+        
+        System.out.println("Unique number are");
+        for (Integer uniques : uniqueSet){
+         System.out.println("Unique number are - " + uniques);
+        }
+    
+    }
+    public static void main(String[] args) {
+         List<Integer> myNumbers = new ArrayList<>();
+        myNumbers.add(10);
+        myNumbers.add(20);
+        myNumbers.add(10);
+        myNumbers.add(30);
+        myNumbers.add(40);
+        myNumbers.add(20);
+        myNumbers.add(50);
+     
+       printUniqueNum(myNumbers);
+    }
+}
