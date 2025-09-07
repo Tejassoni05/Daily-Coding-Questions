@@ -1,0 +1,42 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.io.*;
+
+class Main implements Serializable {
+    int id;
+    String name;
+    String password;
+
+    public Main(int id, String name, String password) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main(23, "Tejas", "Tej");
+        String fileName = "C:\\Users\\YourName\\Desktop\\Miraj.ser";  // better use .ser extension
+        //Serialization 
+        try (FileOutputStream fileOut = new FileOutputStream(fileName);
+             ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+
+            out.writeObject(obj);
+            System.out.println("Object serialized successfully into " + fileName);
+
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+        
+        //Deserialization converting byteString to objetct Stream 
+        try (FileInputStream fileIn = new FileInputStream(fileName);
+             ObjectInputStream in = new ObjectInputStream(fileIn)) {
+
+            Main deserializedObj = (Main) in.readObject();
+            System.out.println("Object deserialized: " + deserializedObj.id +
+                               " " + deserializedObj.name + " " + deserializedObj.password);
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
