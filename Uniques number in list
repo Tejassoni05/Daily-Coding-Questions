@@ -6,12 +6,7 @@ class Main {
         for(Integer number : numbers ){
             uniqueSet.add(number);
         }
-        
-        System.out.println("Unique number are");
-        for (Integer uniques : uniqueSet){
-         System.out.println("Unique number are - " + uniques);
-        }
-    
+         System.out.Println(uniqueSet);
     }
     public static void main(String[] args) {
          List<Integer> myNumbers = new ArrayList<>();
