@@ -1,0 +1,22 @@
+import java.util.*; 
+class Main {
+    
+    public static int thirdGreatestNumber(int[] arr){
+        
+        Arrays.sort(arr); 
+        
+        int n = arr.length;
+
+        return arr[n-2];
+    }
+    
+    
+    public static void main(String[] args) {
+        
+        int[] arr = { 23 ,55, 45 , 66 , 77 }; 
+        
+        
+        System.out.println(Main.thirdGreatestNumber(arr));
+        
+    }
+}
