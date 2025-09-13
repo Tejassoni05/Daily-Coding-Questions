@@ -1,0 +1,47 @@
+/* Aumnics company coding queston finding the second voWel in String */
+
+import java.util.*;
+
+class Main {
+    
+    private static boolean isVowel(char ch) {
+        ch = Character.toLowerCase(ch);
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+
+    public static void findSecondVowel(String str) {
+        String[] words = str.split(" "); 
+        
+        for (String word : words) {
+            int vowelCount = 0; 
+            char secondVowel = '\0'; 
+            
+            for (int i = 0; i < word.length(); i++) {
+                char ch = word.charAt(i);
+                
+                if (isVowel(ch)) {
+                    vowelCount++; 
+                    
+                    if (vowelCount == 2) {
+                        secondVowel = ch; 
+                        break;  // stop after finding 2nd vowel
+                    }
+                }
+            }
+            
+            if (secondVowel != '\0') {
+                System.out.println(word + " -> second vowel: " + secondVowel);
+            } else {
+                System.out.println(word + " -> no second vowel");
+            }
+        }
+    }
+    
+    public static void main(String [] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string: ");
+        String str = sc.nextLine(); 
+        findSecondVowel(str); 
+    }
+}
+
