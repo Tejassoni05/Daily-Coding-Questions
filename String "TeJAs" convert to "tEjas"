@@ -1,0 +1,25 @@
+// a to z (Lowercase letters): 97 → 122
+class Main {
+    public static void main(String[] args) {
+        
+        String str = "TeJAs";
+        String result = "";
+        
+        for (int i = 0 ; i < str.length() ; i++ ){
+            char ch = str.charAt(i);
+             System.out.println(ch);
+        
+            if(ch >= 'A' && ch <= 'Z'){
+                result = result + (char) (ch +32);// lower case
+            }
+            
+            else if(ch >= 'a' && ch <= 'z'){
+                result= result + (char)(ch-32); // upper case 
+                
+            }
+    
+        }
+        
+        System.out.println(result);
+    }
+}
