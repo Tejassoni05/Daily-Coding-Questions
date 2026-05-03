@@ -1,0 +1,103 @@
+// using toCharArray();
+// using toChar(int index)
+// using StringBuilder class reversed();
+// using StringBuffer  class reversed();
+
+class Main {
+    public static void main(String[] args) {
+        String str = "hello";
+        int length = str.length();
+        
+        for(int i =length-1; i>=0; i--){
+            char ch = str.charAt(i);
+             System.out.print(ch);
+
+             
+        } 
+        // StringBuilder for optimized aproach and clean code
+         System.out.println(" ");
+          System.out.println(" ");
+         
+             StringBuilder reversed = new StringBuilder(str);
+             reversed.reverse(); // not problem if we call two times 
+              System.out.print( reversed.reverse());
+            
+         System.out.println(" ");
+         
+          System.out.println("Using toCharArray");
+          
+          char []ch = str.toCharArray();
+          for(int i = ch.length-1; i>=0 ; i--){
+               System.out.print(ch[i]);
+          }
+          
+        
+    }
+}
+
+/*
+🟡 2. Using Extra Variable (Build new string)
+String str = "hello";
+String rev = "";
+
+for(int i = str.length() - 1; i >= 0; i--){
+    rev = rev + str.charAt(i);
+}
+
+System.out.println(rev);
+
+👉 Simple hai, samajhne me easy
+👉 ❗ But slow hai (string immutable hoti hai → बार-बार memory banती है)
+
+🔵 3. Using StringBuilder (Most recommended)
+String str = "hello";
+String reversed = new StringBuilder(str).reverse().toString();
+System.out.println(reversed);
+
+👉 Clean + fast
+👉 Interview me bolna:
+“StringBuilder is better because it is mutable and efficient”
+
+🟣 4. Two Pointer Approach (Advanced thinking)
+char[] arr = str.toCharArray();
+
+int left = 0;
+int right = arr.length - 1;
+
+while(left < right){
+    char temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+
+    left++;
+    right--;
+}
+
+System.out.println(new String(arr));
+
+👉 Ye approach DSA level ka hai
+👉 Interviewer impress 💯
+
+🔴 5. Recursive Approach (thoda rare but powerful)
+public static void reverse(String str, int i){
+    if(i < 0) return;
+    
+    System.out.print(str.charAt(i));
+    reverse(str, i - 1);
+}
+
+Call:
+
+reverse("hello", "hello".length() - 1);
+
+👉 Ye dikhaata hai tu recursion bhi samajhta hai
+
+💥 Real Interview Strategy
+
+Agar interviewer bole “reverse string”:
+
+👉 Tu bol:
+
+“We can solve using loop” (basic)
+“We can optimize using StringBuilder”
+“We can also use two-pointer approach for in-place reversal” */
