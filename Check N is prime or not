@@ -1,0 +1,25 @@
+// prime Number its has only 2 factors, 1 has only 1 factor not a prime number, 
+//check n is prime number or not
+
+class Main {
+     
+    public static void main(String[] args) {
+       int n = 5;
+       int  countFactors = 0 ;
+        
+        for(int i = 1; i<=n; i++){
+            if(n%i==0){
+                countFactors++;
+            }
+        }
+        
+        if(countFactors==2){
+             System.out.print("prime number");
+        }
+        
+        else
+        {
+             System.out.print(" Not a prime number");
+        }
+    }
+}
